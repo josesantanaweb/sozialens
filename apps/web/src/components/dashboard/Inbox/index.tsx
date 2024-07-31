@@ -34,66 +34,67 @@ const tabs = [
   },
 ];
 
+const MESSAGES = [
+  {
+    image_url:
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXY+hgEP0PAANOAZ0iIL2tAAAAAElFTkSuQmCC",
+    name: "Jessica Rhem",
+    created_at: "2021-07-07",
+    message: "Lorem ipsum dolor sit amet consectetur.",
+  },
+  {
+    image_url:
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXY+hgEP0PAANOAZ0iIL2tAAAAAElFTkSuQmCC",
+    name: "Sam Smith",
+    created_at: "2021-07-07",
+    message: "Lorem ipsum dolor sit amet consectetur.",
+  },
+  {
+    image_url:
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXY+hgEP0PAANOAZ0iIL2tAAAAAElFTkSuQmCC",
+    name: "George Acosta",
+    created_at: "2021-07-07",
+    message: "Lorem ipsum dolor sit amet consectetur.",
+  },
+  {
+    image_url:
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXY+hgEP0PAANOAZ0iIL2tAAAAAElFTkSuQmCC",
+    name: "John Smith",
+    created_at: "2021-07-07",
+    message: "Lorem ipsum dolor sit amet consectetur.",
+  },
+  {
+    image_url:
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXY+hgEP0PAANOAZ0iIL2tAAAAAElFTkSuQmCC",
+    name: "Jessica Rhem",
+    created_at: "2021-07-07",
+    message: "Lorem ipsum dolor sit amet consectetur.",
+  },
+  {
+    image_url:
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXY+hgEP0PAANOAZ0iIL2tAAAAAElFTkSuQmCC",
+    name: "Sam Smith",
+    created_at: "2021-07-07",
+    message: "Lorem ipsum dolor sit amet consectetur.",
+  },
+  {
+    image_url:
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXY+hgEP0PAANOAZ0iIL2tAAAAAElFTkSuQmCC",
+    name: "George Acosta",
+    created_at: "2021-07-07",
+    message: "Lorem ipsum dolor sit amet consectetur.",
+  },
+  {
+    image_url:
+      "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXY+hgEP0PAANOAZ0iIL2tAAAAAElFTkSuQmCC",
+    name: "John Smith",
+    created_at: "2021-07-07",
+    message: "Lorem ipsum dolor sit amet consectetur.",
+  },
+]
+
 const Inbox = (): JSX.Element => {
   const [currentTab, setCurrentTab] = useState<TabProps>(TabProps.ALL);
-  const [messages, setMessages] = useState([
-    {
-      image_url:
-        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXY+hgEP0PAANOAZ0iIL2tAAAAAElFTkSuQmCC",
-      name: "Jessica Rhem",
-      created_at: "2021-07-07",
-      message: "Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      image_url:
-        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXY+hgEP0PAANOAZ0iIL2tAAAAAElFTkSuQmCC",
-      name: "Sam Smith",
-      created_at: "2021-07-07",
-      message: "Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      image_url:
-        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXY+hgEP0PAANOAZ0iIL2tAAAAAElFTkSuQmCC",
-      name: "George Acosta",
-      created_at: "2021-07-07",
-      message: "Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      image_url:
-        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXY+hgEP0PAANOAZ0iIL2tAAAAAElFTkSuQmCC",
-      name: "John Smith",
-      created_at: "2021-07-07",
-      message: "Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      image_url:
-        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXY+hgEP0PAANOAZ0iIL2tAAAAAElFTkSuQmCC",
-      name: "Jessica Rhem",
-      created_at: "2021-07-07",
-      message: "Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      image_url:
-        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXY+hgEP0PAANOAZ0iIL2tAAAAAElFTkSuQmCC",
-      name: "Sam Smith",
-      created_at: "2021-07-07",
-      message: "Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      image_url:
-        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXY+hgEP0PAANOAZ0iIL2tAAAAAElFTkSuQmCC",
-      name: "George Acosta",
-      created_at: "2021-07-07",
-      message: "Lorem ipsum dolor sit amet consectetur.",
-    },
-    {
-      image_url:
-        "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAABCAYAAAAfFcSJAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAANSURBVBhXY+hgEP0PAANOAZ0iIL2tAAAAAElFTkSuQmCC",
-      name: "John Smith",
-      created_at: "2021-07-07",
-      message: "Lorem ipsum dolor sit amet consectetur.",
-    },
-  ]);
 
   return (
     <div className="card p-5 h-[760px]">
@@ -118,7 +119,7 @@ const Inbox = (): JSX.Element => {
           ))}
         </div>
         <div>
-          {messages.map((message, index) => (
+          {MESSAGES.map((message, index) => (
             <div
               key={index}
               className="flex items-center w-full gap-2 px-2 py-2 my-2 cursor-pointer hover:bg-base-600 rounded-xl"
